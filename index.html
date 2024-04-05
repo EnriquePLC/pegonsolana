@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+ 
+        <!-- viewport - for mobile screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <!-- favicon & title -->
+        <link rel="shortcut icon" href="files/pig_icon.ico">
+        <title>PEG 🐽</title>
+ 
+        <!-- fonts -->
+        <link href="files/css2" rel="stylesheet">
+    <style>
+        :root{
+            --lace: var(--pink); /* change pink to the color you want */ 
+            /* options are: pink, black, blue, yellow, purple */
+            --pink: url("files.catbox.moe/bsr34l.png");
+            --black: url("files.catbox.moe/stv815.png");
+            --blue: url("files.catbox.moe/pweyk3.png");
+            --yellow: url("files.catbox.moe/r3ub8h.png");
+            --purple: url("files.catbox.moe/acs8xi.png");
+        }
+ 
+        /****** fonts ******/
+        @font-face {
+            font-family: scratch boys;
+            src: url(https://files.catbox.moe/n1shzm.ttf);
+        }
+ 
+        @font-face {
+            font-family: cerl;
+            src: url(https://files.catbox.moe/n1shzm.ttf);
+        }
+ 
+        @font-face {
+            font-family: Adorable Doll;
+            src: url(https://files.catbox.moe/n1shzm.ttf);
+        }
+ 
+        @font-face{
+            font-family: vintage;
+            src: url(https://files.catbox.moe/n1shzm.ttf);
+        }
+ 
+        /****** scrollbar ******/
+        ::-webkit-scrollbar{
+            display:none;
+        }
+ 
+        /****** select hightlight ******/
+        ::selection {
+            background: #f241b1;
+            color:black;
+        }
+ 
+        ::-moz-selection {
+            background: #f241b1;
+            color:black;
+        }
+ 
+       /****** body ******/
+        body {
+            background-color: #f241b1;
+            background-image: linear-gradient(#141A0D 1px, transparent 1px), linear-gradient(to right, #141A0D 1px, pink 1px);
+            background-repeat: repeat;
+            background-position: 0 0;
+            background-attachment: fixed;
+            color: #f241b1; /* default font color */
+            font-family: ms gothic; /* default font */
+            font-size: 20px; /* default font size */
+            padding: 10px;
+            background-image: linear-gradient(#141A0D 1px, transparent 1px), linear-gradient(to right, #141A0D 1px, pink 1px);
+            background-size: 20px 20px;
+            animation: backgroundAnimation 60s infinite; 
+        }
+
+        
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+ 
+        /****** links ******/
+        a{
+            text-decoration: none;
+            color:#fff;
+            transition:0.3s;
+            text-shadow: -1px 0 #f241b1, 0 1px #f241b1, 1px 0 #f241b1, 0 -1px #f241b1;
+        }
+ 
+        a:hover{
+            cursor:help;
+            transition:0.3s;
+            color:#f241b1;
+            text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+        }
+ 
+        /****** wrappers ******/
+        #wrapper{
+            animation: fadeEffect 1s;
+            margin: auto;
+            width:fit-content;
+            width: -moz-fit-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position:absolute;
+        }
+ 
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+ 
+        /****** containers ******/
+        .container {  
+            display: grid;
+            margin: auto;
+            width:1000px;
+            grid-template-columns: 250px 1fr 1fr 250px;
+            grid-template-rows: 250px 250px 0.1fr;
+            gap: 10px 10px;
+            grid-auto-flow: row;
+            grid-template-areas:
+            "icon main main links"
+            "updates main main box"
+            "footer footer footer footer";
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+        }
+ 
+        .main { 
+            grid-area: main;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            overflow:auto;
+        }
+ 
+        .icon { 
+            grid-area: icon;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+        }
+ 
+        .icon img{
+            width:100%;
+            display:block;
+            height:auto;
+        }
+ 
+        .updates { 
+            grid-area: updates; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+            overflow:auto;
+            line-height:130%;
+        }
+ 
+        .links { 
+            grid-area: links; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round; 
+            padding:10px;
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+ 
+        .box { 
+            grid-area: box; 
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+            padding:10px;
+        }
+ 
+        .footer{
+            grid-area: footer;
+            text-align:center;
+            border-width:10px;
+            border-style:solid;
+            border-image: var(--lace) 8 fill round;
+        }
+ 
+        header{
+            text-align: center;
+            font-family:Adorable Doll;
+            font-size:40px;
+            margin-bottom:10px;
+        }
+ 
+        .cornerimg{
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+		
+		.cornerimg2{
+            position:absolute;
+            bottom:0;
+            right:20;
+        }
+		
+        .highlight{
+            background-color:#f241b1;
+            color:white;
+        }
+		
+		
+		*{
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: purple;
+
+}
+.cent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.cent img{
+	transform: translateY(-90px);
+}
+#main{
+	width: 1920px;
+	margin: 0 auto;
+	position: relative;
+}
+.as{
+	position: absolute;
+	top: 300px;
+	width: 1920px;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.as img{
+	width: 200px;
+}
+
+/* TEXT */
+.ab{
+	position: absolute;
+	
+}
+.lock{
+	top: -10px;
+	right: 0px;
+	rotate: -14deg;
+
+	opacity: 0;
+	animation-name: opac;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 3s;
+}
+.call{
+	top: 350px;
+	left: 0px;
+    transform: rotate(0deg);
+    animation-name: floatAndRotate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+}
+.raider{
+	top: 350px;
+	right: 0px;
+    transform: rotate(0deg);
+    animation-name: floatAndRotate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+}
+.reno {
+    position: fixed;
+    top: 150px;
+    right: 0px;
+    transform: rotate(0deg);
+    animation-name: floatAndRotate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+}
+.mark{
+	top: -200px;
+	right: 0px;
+	rotate: 3deg;
+    transform: rotate(0deg);
+    animation-name: floatAndRotate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+}
+.moon{
+	top: -250px;
+	left: 0px;
+	rotate: 5deg;
+    transform: rotate(0deg);
+    animation-name: floatAndRotate;
+    animation-fill-mode: forwards;
+    animation-duration: 5s; 
+    animation-delay: 1s; 
+    animation-iteration-count: infinite; 
+}
+.safe{
+	top: 50px;
+	left: 0px;
+	rotate: -10deg;
+
+	opacity: 0;
+	animation-name: opac;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 3s;
+}
+.x{
+	top: 150px;
+	left: 0px;
+	rotate: 25deg;
+
+	opacity: 0;
+	animation-name: opac;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 4s;
+}
+
+
+.h{
+	width: 680px;
+	height: 680px;
+}
+.top{
+	position: absolute;
+ top: 0px;
+ left: 400px;
+
+ 	opacity: 0;
+	animation-name: top;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 2s;
+}
+.bot{
+	position: absolute;
+	bottom: 0px;
+	left: 1100px;
+
+	opacity: 0;
+	animation-name:bot;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 4s;
+}
+.rig{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	rotate: 180deg;
+
+	opacity: 0;
+	animation-name: rig;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 7s;
+}
+
+@keyframes floatAndRotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50px) rotate(45deg); /* Ajuste a altura e a rotação conforme necessário */
+    }
+}
+
+
+
+
+
+
+@media (min-width: 1920px){
+	*{
+		overflow: hidden;
+	}
+}
+
+
+
+
+@keyframes opac{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes top{
+	0%{
+		opacity: 0;
+		transform: translateY(-600px);
+	}
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes bot{
+	0%{
+		opacity: 0;
+		transform: translateY(600px);
+	}
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes rig{
+	0%{
+		opacity: 0;
+		transform: translateX(600px);
+	}
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+ 
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+		margin-top: 600px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "icon"
+            "main"
+            "updates"
+            "box"
+            "links"
+            "footer";
+    }
+
+    .container > * {
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        text-align: center;
+        margin-top: 20px;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon img {
+        max-width: 60%;
+        height: auto;
+    }
+
+    .updates {
+        height: auto;
+        min-height: 200px;
+    }
+}
+.popup-window {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px #00000080;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px; /* Defina o tamanho máximo desejado */
+    margin: 0 auto; /* Isso centralizará o pop-up na tela */
+}
+
+button {
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+.popup-overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 50;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Adicionei um fundo mais escuro para destacar o pop-up */
+    z-index: 1000;
+}
+
+.popup-window {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px #00000080;
+    padding: 20px;
+    text-align: center;
+    max-width: 80%; /* Ajuste o tamanho máximo conforme necessário */
+    max-height: 80%; /* Ajuste a altura máxima conforme necessário */
+    overflow: auto; /* Adicione rolagem se o conteúdo for muito longo */
+}
+
+button {
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+.win95-popup {
+    background: silver;
+    border: 2px outset #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.title-bar {
+    align-items: center;
+    background: #f115df;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 5px;
+}
+
+.title-bar-text {
+    font-weight: 700;
+}
+
+.title-bar-controls {
+    display: flex;
+}
+
+.title-bar-controls button {
+    background: #fff;
+    border: 1px solid #000;
+    font-size: 0.6rem;
+    padding: 1px 4px;
+}
+
+.window-body {
+    background: #fff;
+    color: #000;
+    padding: 10px;
+}
+
+.button-group button {
+    background-color: navy;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #1c56b5;
+    border-color: #fff;
+}
+
+.button-group button:active {
+    background-color: #16397f;
+    border-color: #000;
+}
+    </style></head>
+    
+     </style>
+</head>
+
+		<div class="ab lock"><img src="files/ge4sxq.png"></div>
+		<div class="ab call"><img src="files/fly.png"></div>
+		<div class="ab raider"><img src="files/fly.png"></div>
+		<div class="ab reno"><img src="files/fly.png"></div>
+		<div class="ab mark"><img src="files/fly.png"></div>
+		<div class="ab moon"><img src="files/fly.png"></div>
+		<div class="ab safe"><img src="files/ge4sxq.png"></div>
+<body>
+
+
+    <style>
+        #wrapper {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+      <div class="popup-overlay" id="popup">
+        <div class="win95-popup">
+            <div class="title-bar">
+                <div class="title-bar-text">🐷 $PEG 🐷 </div>
+                <div class="title-bar-controls">
+                    <button onclick="openContent()">x</button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p>PEGS CUTIES?</p>
+                <button id="popup-button" onclick="openContent()">YES</button>
+				<button id="popup-button" onclick="openContent()">YES</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="main">
+                About: <span class="highlight" id="typedText"></span> $PEG <br><br>
+ 
+                    🐷 $PEG is the latest sensation on the internet, known for being a token with the unique ability to fly - yes, pigs can now fly! Inspired by the hilarious concept that pigs can defy gravity, $PEG brings with it a delightful blend of fun and financial innovation in the Solana ecosystem. <span class="highlight">Have you heard of PIGSCANFLY? 🐷 It's more than just a meme - it's the expression of a porcine revolution in the crypto space.</span> $PEG is taking off on @SOLANA and promises to bring a unique twist to the world of cryptocurrencies. 🐷 <br><br> <br><br>
+
+                <a class="ca-button update-button" href="#">CA:Soon</a><br><br>
+            </div>
+ 
+            <div class="icon">
+                <img src="files/tuxnn8.png">
+            </div>
+ 
+            <div class="updates">
+                <header>Socials</header>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="telegram-button update-button" href="https://t.me/PegOnSolano">Telegram</a><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="twitter-button update-button" href="https://twitter.com/pegsolana_">Twitter</a><br><br>
+            </div>
+ 
+            <div class="links">
+                <header>Tokenomics</header>
+                <a>Supply: 1,000,000,000</a><br><br>
+                <a>Fees: 0/0</a><br><br>
+                <a>$PEG</a>
+            </div>
+ 
+            <div class="box">
+                PIGS FLY? 
+                OINK FLYING
+                PIGS FLY? 
+                OINK FLYING
+                PIGS FLY? 
+                OINK FLYING
+                PIGS FLY? 
+                OINK FLYING
+                PIGS FLY? 
+                OINK FLYING
+            </div>
+ 
+            <div class="footer">
+                
+            </div>
+ 
+            <div class="cornerimg">
+                <img src="files/ge4sxq.png">
+            </div>
+            
+            <div class="cornerimg2">
+                <img src="files/ge4sxq.png">
+            </div>
+        </div>
+    </div>
+	
+	
+    <audio id="background-music" src="files/pig.mp3" loop></audio>
+
+
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        function openContent() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('wrapper').style.display = 'block';
+			document.getElementById('background-music').play();
+        }
+        window.onload = function () {
+            openPopup();
+        };
+    </script>
+	
+<script>
+        const text = "Pigs Can Fly";
+        let index = 0;
+        const speed = 100; 
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typedText").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+       
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+
+	
+
+	
+</body>
+</html>
